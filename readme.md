@@ -1,0 +1,7 @@
+
+
+api token resulting from running get-api-token.js:
+c.ZzwnlUv6cmKsoYVjbMmL5v6umieg06MHmp5VRnhJ3ekxr7NwPmr7QVjKm8eLQNjFafiOc3FP59E51TUfJCJ8oNRmnFyPYnQtS2TIwTzAAANina6TdhZoGIunxBPJlsvNjAl1W6AWR16fpF7B
+
+thermostat id:
+XvVANsbisE06xwxNqVZNmqHfbGN0RAej
