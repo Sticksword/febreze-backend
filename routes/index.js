@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const request = require('request-promise');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -7,3 +8,8 @@ router.get('/', function(req, res, next) {
 });
 
 module.exports = router;
+
+router.post('/connect/febreze/:clientId', function(req, res, next) {
+  
+
+});
