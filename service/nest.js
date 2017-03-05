@@ -11,6 +11,7 @@ exports.update = function (temp, duration, humidity) {
   var body = {
     'target_temperature_f': parseInt(temp <= 50 ? 50 : temp >= 90 ? 90 : temp),
     'fan_timer_active': false
+
   };
   if (duration && duration !== 0) {
     body.fan_timer_active = true;
