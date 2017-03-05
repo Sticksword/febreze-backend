@@ -1,7 +1,7 @@
 /*jshint esversion: 6 */
 const request = require('request-promise');
-const baseUri = 'https://na-hackathon-api.arrayent.io:443/v3/devices/33554447/';
-const token = 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRfaWQiOiI4NTA2ZWUwMC0wMTFlLTExZTctYWU0Ni01ZmMyNDA0MmE4NTMiLCJlbnZpcm9ubWVudF9pZCI6Ijk0OGUyY2YwLWZkNTItMTFlNi1hZTQ2LTVmYzI0MDQyYTg1MyIsInVzZXJfaWQiOiI5MDAwMDk3Iiwic2NvcGVzIjoie30iLCJncmFudF90eXBlIjoiYXV0aG9yaXphdGlvbl9jb2RlIiwiaWF0IjoxNDg4NjYxNzI1LCJleHAiOjE0ODk4NzEzMjV9.m1m_nMRFhsGLJAXtKwIBoyh-vRnNUPdC-3Ud28HYvQv9iDkbZBUUYglcKnVNdZ30prpzSsXDRbD-t7OjnUJSAQ';
+const baseUri = 'https://na-hackathon-api.arrayent.io:443/v3/devices/33554442/';
+const token = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRfaWQiOiIzZTUyNzE0MC0wMWRkLTExZTctYWU0Ni01ZmMyNDA0MmE4NTMiLCJlbnZpcm9ubWVudF9pZCI6Ijk0OGUyY2YwLWZkNTItMTFlNi1hZTQ2LTVmYzI0MDQyYTg1MyIsInVzZXJfaWQiOiI5MDAwMDg2Iiwic2NvcGVzIjoie30iLCJncmFudF90eXBlIjoiYXV0aG9yaXphdGlvbl9jb2RlIiwiaWF0IjoxNDg4NzQzNzUxLCJleHAiOjE0ODk5NTMzNTF9.APybQ7kACPfX_MyOkDDusSk42xHj_j1yXscVqDSic4_gU3D6R_y3_2rXTkdSVsvHPpZEVwJKzDSPMvrrfZvl1Q";
 
 exports.turnPurple = function(req, res, next) {
   const options = {
