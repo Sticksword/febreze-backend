@@ -10,7 +10,7 @@ exports.turnPurple = function(req, res, next) {
       'Authorization': token,
       'content-type': 'application/json'
     },
-    body: '[{"DeviceAction": "led_mode=1"},{"DeviceAction": "led_color=0,11,4,4,4"}]'
+    body: '[{"DeviceAction": "led_mode=1"},{"DeviceAction": "led_color=0,14,4,4,4"}]'
   };
 
   request(options)
