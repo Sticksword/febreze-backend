@@ -47,9 +47,9 @@ exports.update = function(location, next) {
   var scene = "100, 255, 0, 0, 0, 0";
   var ledColor = "0, 13, 4, 4, 4";
   console.log(location);
-  if (location === "Sichuan National Park") {
+  if (location.toLowerCase() === "china national park") {
     // heater(scent) 2
-    scent = "0, 0, 0, 100, 255, 0";
+    scene = "0, 0, 0, 100, 255, 0";
     ledColor = "0, 0, 4, 4, 4";
   }
 
