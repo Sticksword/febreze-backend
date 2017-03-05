@@ -6,6 +6,16 @@ const baseUri = 'https://developer-api.nest.com/devices/thermostats/XvVANsbisE06
 const token = 'Bearer c.ZzwnlUv6cmKsoYVjbMmL5v6umieg06MHmp5VRnhJ3ekxr7NwPmr7QVjKm8eLQNjFafiOc3FP59E51TUfJCJ8oNRmnFyPYnQtS2TIwTzAAANina6TdhZoGIunxBPJlsvNjAl1W6AWR16fpF7B'
 
 exports.update = function (temp, duration) {
+  var body = {
+    'target_temperature_f': parseInt(temp),
+    'fan_timer_active': false
+  }
+  if (duration) {
+    body.fan_timer_active = true;
+    body.fan_timer_duration = parseInt(duration);
+  }
+  console.log(body);
+
   var options = {
     method: 'PUT',
     uri: baseUri,
@@ -13,11 +23,7 @@ exports.update = function (temp, duration) {
       'Authorization': token,
       'Content-Type': 'application/json'
     },
-    body: {
-      'target_temperature_f': parseInt(temp),
-      'fan_timer_active': true,
-      'fan_timer_duration': parseInt(duration)
-    },
+    body: body,
     json: true,
   }
 
