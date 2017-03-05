@@ -2,7 +2,6 @@
 
 var express = require('express');
 var router = express.Router();
-const request = require('request-promise');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -15,14 +14,36 @@ router.post('/', function(req, res) {
   console.log('=========');
   console.log(req.body);
 
-  if (makeTemperaturePost(req.body.temp) === 0) {
-    res.send('success');
-  } else {
-    res.send('error');
-  }
+  makeTemperaturePost(req.body.temp, function(result) {
+    res.send(result);
+  });
+
 });
 
-function makeTemperaturePost (temp) {
+// var request = require('request');
+var request = require('request-promise');
+
+
+
+function makeTemperaturePost (temp, next) {
+
+  // var options = {
+  //   method: 'PUT',
+  //   url: 'https://developer-api.nest.com/devices/thermostats/XvVANsbisE06xwxNqVZNmqHfbGN0RAej',
+  //   headers: {
+  //     authorization: 'Bearer c.nz0cGM30l2SqHokV7GS2RjTTph84DLLOqb3Fwdgcwe5aaXKDolffeu8gDS6hgS2HK8NgjqrjR8ZtuG5v5yqNdcEW2hwHFLgPLEA2wqzHc33SM8GcVhhJpliLQDYktKx2xKpZcdRiL3mt1Qgc',
+  //     'content-type': 'application/json'
+  //   },
+  //   body: { 'target_temperature_f': temp },
+  //   json: true
+  // };
+  //
+  // request(options, function (error, response, body) {
+  //   if (error) throw new Error(error);
+  //
+  //   console.log(body);
+  // });
+
   var options = {
     method: 'PUT',
     uri: 'https://developer-api.nest.com/devices/thermostats/XvVANsbisE06xwxNqVZNmqHfbGN0RAej',
@@ -33,19 +54,18 @@ function makeTemperaturePost (temp) {
     body: {
       'target_temperature_f': temp
     },
-    json: true // Automatically stringifies the body to JSON
+    json: true, // Automatically stringifies the body to JSON
+    // simple: false
   };
 
   request.put(options)
     .then(function (parsedBody) {
       // POST succeeded...
-      console.log('success');
-      return 0;
+      console.log('success!!!!');
     })
     .catch(function (err) {
       // POST failed...
-      console.log(err);
-      return -1;
+      next(err);
     });
 }
 
