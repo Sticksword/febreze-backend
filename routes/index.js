@@ -12,3 +12,5 @@ module.exports = router;
 
 router.post('/test1', Febreze.turnPurple);
 router.post('/test2', Febreze.pathLight);
+router.post('/test3', Febreze.scentOne);
+router.post('/test4', Febreze.scentTwo);
