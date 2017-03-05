@@ -83,11 +83,11 @@ function getHumidity(humidity) {
 function callHumi() {
 
   var body = {
-    'access_token': '246382cdf7794bad141b411ec638b1c91c8b1553'
+    'access_token': '5aaebe722a2dc3fb1030fc7e8bf754bd53f7f4fb'
   };
   var options = {
     method: 'POST',
-    uri: 'https://api.particle.io/v1/devices/246382cdf7794bad141b411ec638b1c91c8b1553/startHumi',
+    uri: 'https://api.particle.io/v1/devices/2f003e001447353136383631/startHumi',
     headers: {
       'Authorization': token,
       'Content-Type': 'application/json'
