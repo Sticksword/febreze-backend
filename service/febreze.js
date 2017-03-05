@@ -35,16 +35,26 @@ exports.pathLight = function(req, res, next) {
 
   request(options)
     .then(function(response) {
-      console.log("here");
       return res.send(response);
     })
     .catch(function(err) {
-      console.log("error here!!!!!!!!!!!");
       return res.send(err);
     });
 }
 
-exports.scentOne = function(req, res, next) {
+exports.update = function(location, next) {
+  // heater(scent) 1
+  var scene = "100, 255, 0, 0, 255, 0";
+  var ledColor = "0, 11, 4, 4, 4";
+  var heaterState = 3;
+  console.log(location);
+  if (location === "Si Chuan") {
+    // heater(scent) 2
+    scent = "0, 255, 0, 100, 255, 0";
+    ledColor = "0, 2, 4, 4, 4";
+    heaterState = 4;
+  }
+
   const options = {
     method: 'PUT',
     uri: baseUri,
@@ -52,40 +62,22 @@ exports.scentOne = function(req, res, next) {
       'Authorization': token,
       'Content-Type': 'application/json'
     },
-    body: '[{"DeviceAction": "scene_1=100,255,0,0,255,0"}, {"DeviceAction": "led_mode=1"}, {"DeviceAction": "led_color=0,2,4,4,4"}, {"DeviceAction": "heater_state=3"}]'
+    body: [
+      {"DeviceAction": `scene_1=${scene}`},
+      {"DeviceAction": "led_mode=1"},
+      {"DeviceAction": `led_color=${ledColor}`},
+      {"DeviceAction": `header_state=${heaterState}`}
+    ],
+    json: true
   }
+  // `[{"DeviceAction": "scene_1=${scene}"}, {"DeviceAction": "led_mode=1"}, {"DeviceAction": "led_color=${ledColor}"}, {"DeviceAction": "heater_state=${headerState}"}]`
 
   request(options)
     .then(function(response) {
-      console.log("here");
-      return res.send(response);
+      return true;
     })
     .catch(function(err) {
-      console.log("error here!!!!!!!!!!!");
-      return res.send(err);
-    });
-
-}
-
-exports.scentTwo = function(req, res, next) {
-  const options = {
-    method: 'PUT',
-    uri: baseUri,
-    headers: {
-      'Authorization': token,
-      'Content-Type': 'application/json'
-    },
-    body: '[{"DeviceAction": "scene_1=0,255,0,100,255,0"}, {"DeviceAction": "led_mode=1"}, {"DeviceAction": "led_color=0,6,4,4,4"}, {"DeviceAction": "heater_state=4"}]'
-  }
-
-  request(options)
-    .then(function(response) {
-      console.log("here");
-      return res.send(response);
-    })
-    .catch(function(err) {
-      console.log("error here!!!!!!!!!!!");
-      return res.send(err);
+      return false;
     });
 
 }
