@@ -7,14 +7,13 @@ const token = 'Bearer c.ZzwnlUv6cmKsoYVjbMmL5v6umieg06MHmp5VRnhJ3ekxr7NwPmr7QVjK
 
 exports.update = function (temp, duration) {
   var body = {
-    'target_temperature_f': parseInt(temp),
+    'target_temperature_f': parseInt(temp <= 50 ? 50 : temp >= 90 ? 90 : temp),
     'fan_timer_active': false
   }
   if (duration) {
     body.fan_timer_active = true;
     body.fan_timer_duration = parseInt(duration);
   }
-  console.log(body);
 
   var options = {
     method: 'PUT',
