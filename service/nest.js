@@ -87,7 +87,7 @@ function callHumi() {
   };
   var options = {
     method: 'POST',
-    uri: 'https://api.particle.io/v1/devices/2f003e001447353136383631/startHumi',
+    uri: 'https://api.particle.io/v1/devices/246382cdf7794bad141b411ec638b1c91c8b1553/startHumi',
     headers: {
       'Authorization': token,
       'Content-Type': 'application/json'
@@ -95,6 +95,14 @@ function callHumi() {
     body: body,
     json: true,
   };
+
+  request(options)
+    .then(function (response) {
+      console.log('yay humi worked');
+    })
+    .catch(function (err) {
+      console.log('fuck');
+    });
 }
 
 /**
