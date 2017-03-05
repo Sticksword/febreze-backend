@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 const request = require('request-promise');
 const baseUri = 'https://na-hackathon-api.arrayent.io:443/v3/devices/33554447/';
 const token = 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRfaWQiOiI4NTA2ZWUwMC0wMTFlLTExZTctYWU0Ni01ZmMyNDA0MmE4NTMiLCJlbnZpcm9ubWVudF9pZCI6Ijk0OGUyY2YwLWZkNTItMTFlNi1hZTQ2LTVmYzI0MDQyYTg1MyIsInVzZXJfaWQiOiI5MDAwMDk3Iiwic2NvcGVzIjoie30iLCJncmFudF90eXBlIjoiYXV0aG9yaXphdGlvbl9jb2RlIiwiaWF0IjoxNDg4NjYxNzI1LCJleHAiOjE0ODk4NzEzMjV9.m1m_nMRFhsGLJAXtKwIBoyh-vRnNUPdC-3Ud28HYvQv9iDkbZBUUYglcKnVNdZ30prpzSsXDRbD-t7OjnUJSAQ';
