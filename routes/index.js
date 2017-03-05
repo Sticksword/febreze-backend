@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const request = require('request-promise');
+const Febreze = require('../controller/febreze');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -9,7 +10,5 @@ router.get('/', function(req, res, next) {
 
 module.exports = router;
 
-router.post('/connect/febreze/:clientId', function(req, res, next) {
-  
-
-});
+router.post('/test1', Febreze.turnPurple);
+router.post('/test2', Febreze.pathLight);
