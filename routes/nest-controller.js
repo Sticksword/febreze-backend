@@ -30,8 +30,10 @@ function makeTemperaturePost (temp) {
       'Authorization': 'Bearer c.ZzwnlUv6cmKsoYVjbMmL5v6umieg06MHmp5VRnhJ3ekxr7NwPmr7QVjKm8eLQNjFafiOc3FP59E51TUfJCJ8oNRmnFyPYnQtS2TIwTzAAANina6TdhZoGIunxBPJlsvNjAl1W6AWR16fpF7B',
       'Content-Type': 'application/json'
     },
-    body: "{'target_temperature_f': temp}",
-    // json: true // Automatically stringifies the body to JSON
+    body: {
+      'target_temperature_f': temp
+    },
+    json: true // Automatically stringifies the body to JSON
   };
 
   request.put(options)
