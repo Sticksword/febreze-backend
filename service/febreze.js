@@ -45,14 +45,12 @@ exports.pathLight = function(req, res, next) {
 exports.update = function(location, next) {
   // heater(scent) 1
   var scene = "100, 255, 0, 0, 0, 0";
-  var ledColor = "0, 11, 4, 4, 4";
-  var heaterState = 3;
+  var ledColor = "0, 13, 4, 4, 4";
   console.log(location);
-  if (location === "Si Chuan") {
+  if (location === "Sichuan National Park") {
     // heater(scent) 2
     scent = "0, 0, 0, 100, 255, 0";
-    ledColor = "0, 2, 4, 4, 4";
-    heaterState = 4;
+    ledColor = "0, 0, 4, 4, 4";
   }
 
   const options = {
