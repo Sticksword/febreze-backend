@@ -44,13 +44,13 @@ exports.pathLight = function(req, res, next) {
 
 exports.update = function(location, next) {
   // heater(scent) 1
-  var scene = "100, 255, 0, 0, 255, 0";
+  var scene = "100, 255, 0, 0, 0, 0";
   var ledColor = "0, 11, 4, 4, 4";
   var heaterState = 3;
   console.log(location);
   if (location === "Si Chuan") {
     // heater(scent) 2
-    scent = "0, 255, 0, 100, 255, 0";
+    scent = "0, 0, 0, 100, 255, 0";
     ledColor = "0, 2, 4, 4, 4";
     heaterState = 4;
   }
@@ -66,7 +66,8 @@ exports.update = function(location, next) {
       {"DeviceAction": `scene_1=${scene}`},
       {"DeviceAction": "led_mode=1"},
       {"DeviceAction": `led_color=${ledColor}`},
-      {"DeviceAction": `header_state=${heaterState}`}
+      {"DeviceAction": 'heater_state_push=1'},
+      {"DeviceAction": "trigger_1=127,0,1439,1"}
     ],
     json: true
   }
