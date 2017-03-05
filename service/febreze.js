@@ -51,6 +51,8 @@ exports.update = function(location, next) {
     // heater(scent) 2
     scene = "0, 0, 0, 100, 255, 0";
     ledColor = "0, 0, 4, 4, 4";
+  } else if (location.toLowerCase() === "swiss alps") {
+    ledColor = "0, 14, 4, 4, 4";
   }
 
   const options = {
